@@ -13,11 +13,12 @@ import java.io.IOException;
 public class HBaseClient {
 
     private Connection conn;
+    private final static String ZK_URL = "hbase.zookeeper.quorum";
 
     public HBaseClient() {
         Configuration configuration = HBaseConfiguration.create();
         Configuration config = configuration;
-        config.set("hbase.zookeeper.quorum","192.168.128.132");
+        config.set(ZK_URL,"192.168.128.132");
         try {
             this.conn = ConnectionFactory.createConnection(config);
         } catch (IOException e) {
