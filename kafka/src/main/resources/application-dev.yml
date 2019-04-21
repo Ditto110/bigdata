@@ -34,7 +34,7 @@ spring:
                     config:
                         multi-statement-allow: true
     kafka:
-        bootstrap-servers: 192.168.128.132:9092,192.168.128.133:9092,192.168.128.134:9092
+        bootstrap-servers: Ditto.com:9092,Ditto133.com:9092,Ditto134.com:9092
         producer:
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
