@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="info" packages="com.skyworthdigital.pmall.log">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SS} %-5level %class{36} %L %M - %msg%xEx%n" />
+		</Console>
+	</appenders>
+	<loggers>
+		<AsyncRoot level="info" includeLocation="true">
+			<appender-ref ref="Console" />
+		</AsyncRoot>
+	</loggers>
+</configuration>

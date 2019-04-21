@@ -1,0 +1,53 @@
+spring:
+    datasource:
+        druid:
+            type: com.alibaba.druid.pool.DruidDataSource
+            driverClassName: com.mysql.jdbc.Driver
+            # 不需要切源
+            default: 
+                 url: jdbc:mysql://localhost:3306/commonstatmeta?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+                 username: root
+                 password:
+            initial-size: 10
+            max-active: 100
+            min-idle: 10
+            max-wait: 60000
+            pool-prepared-statements: true
+            max-pool-prepared-statement-per-connection-size: 20
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 300000
+            validation-query: SELECT 1 FROM DUAL
+            test-while-idle: true
+            test-on-borrow: false
+            test-on-return: false
+            stat-view-servlet:
+                enabled: true
+                url-pattern: /druid/*
+                #login-username: admin
+                #login-password: admin
+            filter:
+                stat:
+                    log-slow-sql: true
+                    slow-sql-millis: 1000
+                    merge-sql: true
+                wall:
+                    config:
+                        multi-statement-allow: true
+logging:
+        config: classpath:log4j2-pro.xml
+
+cas.config:
+#cas配置项
+    server: http://op.beevideo.tv/casv2
+    siteUrl: http://op.beevideo.tv/pmall
+    adminUrl: http://op.beevideo.tv/adminv2/index
+admin.rpc:
+##Admin RPC接口配置参数 admin.rpc.adminserver
+    server: op.beevideo.tv:80
+    proServerServiceUrl: /adminv2/adminservice/IAdminProService
+    connTimeout: 5000
+    readTimeout: 2000000
+    serverUsername: skyworth_digital
+    serverPassword: 123456
+thirdPart:
+    singleProductUrl: http://op.beevideo.tv/videoApi/api2.0/videoDetail.action
