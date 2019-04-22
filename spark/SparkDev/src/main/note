@@ -1,0 +1,7 @@
+本地测试
+spark-submit --class stat.WordCount C:\\Users\\sdt14325\\Desktop\\statSpark.jar
+spark-submit --class WordCount E:\\SpringProgram\\StatSpark3\\out\\artifacts\\StatSpark3_jar\\StatSpark3.jar C:\\Users\\sdt14325\\Desktop
+\\spark.txt
+
+idea opertion rules
+ctrl + shift + up/dowm  move up/down
